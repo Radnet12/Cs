@@ -150,7 +150,7 @@ body.lock {
   font-weight: bold;
   color: #000;
   padding: 28px 63px;
-  border: 5px solid #795E29;
+  border: 5px solid #795e29;
   background-color: #fff;
   border-radius: 10px;
   -webkit-transition: all 0.3s ease;
@@ -159,7 +159,7 @@ body.lock {
 }
 
 .btn:hover {
-  background-color: #795E29;
+  background-color: #795e29;
   color: #fff;
 }
 
@@ -237,6 +237,14 @@ body.lock {
   100% {
     opacity: 1;
   }
+}
+
+.error__wrapper {
+  text-align: center;
+}
+
+.error__name {
+  font-size: 645px;
 }
 
 .header {
@@ -1026,6 +1034,175 @@ body.lock {
   margin-right: 0;
 }
 
+.modal {
+  display: none;
+}
+
+.modal__active {
+  display: block;
+}
+
+.modal__overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 10px;
+}
+
+.modal__window {
+  max-width: 860px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #fff;
+  padding: 50px;
+  position: relative;
+}
+
+.modal__title {
+  font-size: 40px;
+  font-family: "Playfair Display", sans-serif;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.modal form {
+  max-width: 700px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+}
+
+.modal form input,
+.modal form textarea {
+  margin-bottom: 50px;
+  padding: 5px 10px;
+  font-size: 20px;
+}
+
+.modal form input::-webkit-input-placeholder, .modal form textarea::-webkit-input-placeholder {
+  font-size: 17px;
+  color: #000;
+}
+
+.modal form input::-moz-placeholder, .modal form textarea::-moz-placeholder {
+  font-size: 17px;
+  color: #000;
+}
+
+.modal form input:-ms-input-placeholder, .modal form textarea:-ms-input-placeholder {
+  font-size: 17px;
+  color: #000;
+}
+
+.modal form input::-ms-input-placeholder, .modal form textarea::-ms-input-placeholder {
+  font-size: 17px;
+  color: #000;
+}
+
+.modal form input::placeholder,
+.modal form textarea::placeholder {
+  font-size: 17px;
+  color: #000;
+}
+
+.modal form input:focus::-webkit-input-placeholder, .modal form textarea:focus::-webkit-input-placeholder {
+  color: transparent;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.modal form input:focus::-moz-placeholder, .modal form textarea:focus::-moz-placeholder {
+  color: transparent;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.modal form input:focus:-ms-input-placeholder, .modal form textarea:focus:-ms-input-placeholder {
+  color: transparent;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.modal form input:focus::-ms-input-placeholder, .modal form textarea:focus::-ms-input-placeholder {
+  color: transparent;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.modal form input:focus::placeholder,
+.modal form textarea:focus::placeholder {
+  color: transparent;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.modal form input {
+  border-bottom: 1px solid #000000;
+}
+
+.modal form textarea {
+  max-width: 695px;
+  height: 170px;
+  resize: none;
+  border: 1px solid #000000;
+  overflow: auto;
+}
+
+.modal__close {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 33px;
+  height: 33px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.modal__close::after,
+.modal__close::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  display: block;
+}
+
+.modal__close::after {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.modal__close::before {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
 @media (min-width: 922px) {
   .header__nav ul li a::after {
     content: "";
@@ -1451,6 +1628,19 @@ body.lock {
   .footer__logo img {
     height: 50px;
   }
+
+  .modal__window {
+    padding: 20px;
+  }
+
+  .modal__title {
+    font-size: 25px;
+  }
+
+  .modal__close {
+    top: 20px;
+    right: 20px;
+  }
 }
 
 @media (max-width: 590px) {
@@ -1472,7 +1662,7 @@ body.lock {
   .btn {
     padding: 15px 25px;
     font-size: 15px;
-    border: 2px solid #795E29;
+    border: 2px solid #795e29;
   }
 
   .feedback__bottom.swiper-container {
@@ -1746,6 +1936,27 @@ body.lock {
     width: 20px;
     height: 20px;
     margin-right: 10px;
+  }
+
+  .modal__title {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .modal form input,
+  .modal form textarea {
+    margin-bottom: 30px;
+  }
+
+  .modal form textarea {
+    height: 100px;
+  }
+
+  .modal__close {
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    right: 5px;
   }
 }
 

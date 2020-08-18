@@ -97,6 +97,43 @@ links.forEach(link => {
 	});	
 });
 
+
+// popup
+const modal = document.querySelector('.modal'),
+	  modalBtn = document.querySelector('.feedback__btn'),
+	  closeBtn = document.querySelector('.modal__close'),
+	  overlay = document.querySelector('.modal__overlay'),
+	  fixBlocks = document.querySelectorAll('.fix-block');
+let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
+
+modalBtn.addEventListener('click', (e)=> {
+	e.preventDefault();
+	modal.classList.add('modal__active');
+	document.body.classList.add('lock');
+	document.body.style.paddingRight = paddingOffset;
+	fixBlocks.forEach(item => {
+		item.style.paddingRight = paddingOffset;
+	});
+});
+closeBtn.addEventListener('click', ()=> {
+	modal.classList.remove('modal__active');
+	document.body.classList.remove('lock');
+	document.body.style.paddingRight = '0px';
+	fixBlocks.forEach(item => {
+		item.style.paddingRight = '0px';
+	});
+});
+overlay.addEventListener('click', (e)=> {
+	if (e.target == overlay) {
+		modal.classList.remove('modal__active');
+		document.body.classList.remove('lock');
+		document.body.style.paddingRight = '0px';
+		fixBlocks.forEach(item => {
+			item.style.paddingRight = '0px';
+		});
+	}
+});
+
 // Dynamic adapt 
 (function () {
 	let originalPositions = [];
