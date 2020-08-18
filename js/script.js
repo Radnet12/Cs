@@ -48,7 +48,7 @@ function hideTabContent() {
 		item.classList.add('portfolio__wrap-hidden');
 	});
 }
-function showTabContent(i = 3) {
+function showTabContent(i = 1) {
 	tabsContent[i].classList.add('active');
 	tabsContent[i].classList.remove('hidden');
 	tabsContent[i].classList.add('fade');
@@ -75,7 +75,12 @@ btn.addEventListener('click', ()=> {
 	});
 });
 
-
+// Gallery
+window.addEventListener('load', function () {
+	baguetteBox.run('.portfolio__column', {
+		buttons: false,
+	});
+});
 
 
 // Burger
