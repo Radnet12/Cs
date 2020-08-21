@@ -156,7 +156,7 @@ overlay.addEventListener('click', (e)=> {
 				const daPlace = daArray[1] ? daArray[1].trim() : 'last';
 				const daBreakpoint = daArray[2] ? daArray[2].trim() : '767';
 				const daType = daArray[3] === 'min' ? daArray[3].trim() : 'max';
-				const daDestination = document.querySelector('.' + daArray[0].trim())
+				const daDestination = document.querySelector('.' + daArray[0].trim());
 				if (daArray.length > 0 && daDestination) {
 					daElement.setAttribute('data-da-index', number);
 					//Заполняем массив первоначальных позиций
@@ -171,7 +171,7 @@ overlay.addEventListener('click', (e)=> {
 						"place": daPlace,
 						"breakpoint": daBreakpoint,
 						"type": daType
-					}
+					};
 					number++;
 				}
 			}
@@ -280,7 +280,7 @@ overlay.addEventListener('click', (e)=> {
 
 // swiper 
 const sliderServices = document.querySelector('.slider-service__content.swiper-container'),
-	  sliderFeedback = document.querySelector('.feedback__bottom.swiper-container')
+	  sliderFeedback = document.querySelector('.feedback__bottom.swiper-container');
 
 
 let mySwiper = new Swiper(sliderServices, {

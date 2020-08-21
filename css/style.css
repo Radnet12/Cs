@@ -349,6 +349,7 @@ body.lock {
 }
 
 .main__content-offer-text {
+  margin: 0 auto;
   margin-bottom: 15px;
   line-height: 20px;
   max-width: 420px;
